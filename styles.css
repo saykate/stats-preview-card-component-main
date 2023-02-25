@@ -55,7 +55,7 @@ body {
     padding: 2rem 1.5rem;
     border-radius: 0 0 10px 10px;
 }
-h1, h2 {
+h1, .stat {
     color: var(--clr-white);
     font-family: var(--ff-inter-bold);
     text-align: center;
@@ -80,20 +80,24 @@ h1, h2 {
     font-size: .85rem;
     padding-top: .3rem;
 }
-h2 {
+.stat {
     padding-top: 1.75rem;
 }
 .img-box {
     background-color: var(--clr-violet);
     border-radius: 10px 10px 0 0; 
 }
-.img {
+.img-mob {
     mix-blend-mode: multiply;
     opacity: 80%;
     border-radius: 10px 10px 0 0 ;
-    width: 100%;
     height: 100%;
+    width: 100%;
 }
+.img-desk {
+    display: none;
+}
+
 @media (min-width: 800px) {
     body {
         display: flex;
@@ -103,44 +107,69 @@ h2 {
     .card {
         display: flex;
         flex-direction: row-reverse;
+        height: 100%;
         border-radius: 10px 0 0 10px;
     }
     .img-box {
         width: 50%;
         border-radius: 0 10px 10px 0;
     }
+    .img-mob {
+        display: none;
+    }
+    .img-desk {
+        display: block;
+        mix-blend-mode: multiply;
+        opacity: 80%;
+        border-radius: 10px 10px 0 0 ;
+        height: 100%;
+        width: 100%;
+    }
     .text {
+        /* border: 1px solid brown; */
         width: 50%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding-left: 4rem;
-        padding-right: 6rem;
     }
     h1 {
+        /* border: 1px solid white; */
         text-align: left;
         font-size: 3rem;
         line-height: 4rem;
-        padding: 4rem 0 1.25rem 0;
     }
     .main-text {
+        /* border: 1px solid salmon; */
         text-align: left;
         font-size: 1.4rem;
-        padding-bottom: 4rem;
     }
     .stats {
+        /* border: 1px solid sandybrown; */
         width: 100%;
         text-align: left;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    h2 {
+    .stat {
         font-size: 2.5rem;
-        padding-bottom: 1rem;
     }
     .stat-title {
         font-size: 1rem;
         text-align: left;
+    }
+}
+
+@media (min-width: 1175px) {
+    .text {
+        padding: 4rem;
+    }
+    .main-text {
+        padding: 2rem 0 2rem 0;
+    }
+    .stats {
+        padding-top: 3rem 0 2rem 0;
+    }
+    .stat {
+        padding-bottom: 1rem;
     }
 }
